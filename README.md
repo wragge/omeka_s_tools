@@ -2,13 +2,13 @@
 > Tools for working with data in an instance of Omeka S
 
 
-This file will become your README and also the index of your documentation.
-
 ## Install
 
-`pip install your_project_name`
+`pip install omeka-s-tools`
 
 ## How to use
+
+See [the documentation](https://wragge.github.io/omeka_s_tools/).
 
 ```python
 omeka = OmekaAPIClient('http://timsherratt.org/collections/api')
@@ -72,4 +72,4 @@ items['results'][0]
 
 
 
-See the documentation for more examples.
+See [the documentation](https://wragge.github.io/omeka_s_tools/) for more examples.
