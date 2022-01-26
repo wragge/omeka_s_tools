@@ -11,6 +11,8 @@
 [See the documentation](https://wragge.github.io/omeka_s_tools/api.html) for full details of the Omeka API Client.
 
 ```python
+from omeka_s_tools.api import OmekaAPIClient
+
 omeka = OmekaAPIClient('http://timsherratt.org/collections/api')
 ```
 
