@@ -8,7 +8,7 @@
 
 ## How to use
 
-See [the documentation](https://wragge.github.io/omeka_s_tools/).
+[See the documentation](https://wragge.github.io/omeka_s_tools/api.html) for full details of the Omeka API Client.
 
 ```python
 omeka = OmekaAPIClient('http://timsherratt.org/collections/api')
@@ -72,4 +72,7 @@ items['results'][0]
 
 
 
-See [the documentation](https://wragge.github.io/omeka_s_tools/) for more examples.
+See [the documentation](https://wragge.github.io/omeka_s_tools/api.html) for more examples.
+
+----
+Created by [Tim Sherratt](https://timsherratt.org) ([@wragge](https://twitter.com/wragge)) for the [GLAM Workbench](https://glam-workbench.net/).
