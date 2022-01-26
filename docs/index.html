@@ -1,13 +1,13 @@
 ---
 
-title: Project name here
+title: Omeka S Tools
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Summary description here."
-description: "Summary description here."
+summary: "Tools for working with data in an instance of Omeka S"
+description: "Tools for working with data in an instance of Omeka S"
 nb_path: "index.ipynb"
 ---
 <!--
@@ -55,13 +55,6 @@ nb_path: "index.ipynb"
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -69,7 +62,25 @@ nb_path: "index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">omeka</span> <span class="o">=</span> <span class="n">OmekaAPIClient</span><span class="p">(</span><span class="s1">&#39;http://timsherratt.org/collections/api&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">omeka</span><span class="o">.</span><span class="n">get_resources</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">)</span>
+<span class="n">items</span><span class="p">[</span><span class="s1">&#39;total_results&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -84,7 +95,7 @@ nb_path: "index.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>49</pre>
 </div>
 
 </div>
@@ -95,6 +106,81 @@ nb_path: "index.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">items</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;@context&#39;: &#39;http://timsherratt.org/collections/api-context&#39;,
+ &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/671&#39;,
+ &#39;@type&#39;: [&#39;o:Item&#39;, &#39;schema:Newspaper&#39;],
+ &#39;o:id&#39;: 671,
+ &#39;o:is_public&#39;: True,
+ &#39;o:owner&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/users/1&#39;,
+  &#39;o:id&#39;: 1},
+ &#39;o:resource_class&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/resource_classes/161&#39;,
+  &#39;o:id&#39;: 161},
+ &#39;o:resource_template&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/resource_templates/5&#39;,
+  &#39;o:id&#39;: 5},
+ &#39;o:thumbnail&#39;: None,
+ &#39;o:title&#39;: &#34;Newcastle Morning Herald and Miners&#39; Advocate (NSW : 1876 - 1954)&#34;,
+ &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: None, &#39;medium&#39;: None, &#39;square&#39;: None},
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-01-20T06:36:11+00:00&#39;,
+  &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-01-20T06:36:11+00:00&#39;,
+  &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
+ &#39;o:media&#39;: [],
+ &#39;o:item_set&#39;: [],
+ &#39;o:site&#39;: [],
+ &#39;schema:name&#39;: [{&#39;type&#39;: &#39;literal&#39;,
+   &#39;property_id&#39;: 1116,
+   &#39;property_label&#39;: &#39;name&#39;,
+   &#39;is_public&#39;: True,
+   &#39;@value&#39;: &#34;Newcastle Morning Herald and Miners&#39; Advocate (NSW : 1876 - 1954)&#34;}],
+ &#39;schema:url&#39;: [{&#39;type&#39;: &#39;uri&#39;,
+   &#39;property_id&#39;: 393,
+   &#39;property_label&#39;: &#39;url&#39;,
+   &#39;is_public&#39;: True,
+   &#39;@id&#39;: &#39;http://nla.gov.au/nla.news-title356&#39;}],
+ &#39;schema:identifier&#39;: [{&#39;type&#39;: &#39;literal&#39;,
+   &#39;property_id&#39;: 190,
+   &#39;property_label&#39;: &#39;identifier&#39;,
+   &#39;is_public&#39;: True,
+   &#39;@value&#39;: &#39;356&#39;}]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See the documentation for more examples.</p>
+
+</div>
+</div>
+</div>
 </div>
  
 
