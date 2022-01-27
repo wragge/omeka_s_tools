@@ -391,6 +391,8 @@ class OmekaAPIClient(object):
         * a list of paths to the image/media files (filename is used as title)
         * a list of dicts, each containing `title`, and `path` values
 
+        The path values can either be strings or pathlib Paths.
+
         Returns:
         * the modified payload dict
         '''
@@ -399,11 +401,11 @@ class OmekaAPIClient(object):
         for index, media_file in enumerate(media_files):
             if isinstance(media_file, dict):
                 title = media_file['title']
-                path = media_file['path']
+                path = Path(media_file['path'])
             else:
-                title = media_file[:-4]
-                path = media_file
+                path = Path(media_file)
+                title = path.name
             payload['o:media'].append({'o:ingester': 'upload', 'file_index': str(index), 'o:item': {}, 'dcterms:title': [{'property_id': 1, '@value': title, 'type': 'literal'}]})
-            files[f'file[{index}]'] = Path(path).read_bytes()
+            files[f'file[{index}]'] = path.read_bytes()
         files['data'] = (None, json.dumps(payload), 'application/json')
         return files

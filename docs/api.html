@@ -1133,6 +1133,7 @@ Note:</p>
 <li>a list of paths to the image/media files (filename is used as title)</li>
 <li>a list of dicts, each containing <code>title</code>, and <code>path</code> values</li>
 </ul>
+<p>The path values can either be strings or pathlib Paths.</p>
 <p>Returns:</p>
 <ul>
 <li>the modified payload dict</li>
@@ -1865,9 +1866,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;@context&#39;: &#39;http://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/730&#39;,
+ &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/763&#39;,
  &#39;@type&#39;: &#39;o:Item&#39;,
- &#39;o:id&#39;: 730,
+ &#39;o:id&#39;: 763,
  &#39;o:is_public&#39;: True,
  &#39;o:owner&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/users/1&#39;,
   &#39;o:id&#39;: 1},
@@ -1877,9 +1878,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
  &#39;o:thumbnail&#39;: None,
  &#39;o:title&#39;: &#39;The Bendigo Independent (Vic. : 1891 - 1918)&#39;,
  &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: None, &#39;medium&#39;: None, &#39;square&#39;: None},
- &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-01-26T04:46:55+00:00&#39;,
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-01-27T05:35:36+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-01-26T04:46:55+00:00&#39;,
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-01-27T05:35:36+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
  &#39;o:media&#39;: [],
  &#39;o:item_set&#39;: [],
@@ -2145,8 +2146,8 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
    &#39;@value&#39;: &#34;MR WRAGGE&#39;S PREDICTION. RENEWAL OF CYCLONE FORETOLD.&#34;}],
  &#39;schema:isPartOf&#39;: [{&#39;property_id&#39;: 736,
    &#39;type&#39;: &#39;resource:item&#39;,
-   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/730&#39;,
-   &#39;value_resource_id&#39;: 730,
+   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/763&#39;,
+   &#39;value_resource_id&#39;: 763,
    &#39;value_resource_name&#39;: &#39;items&#39;}],
  &#39;schema:datePublished&#39;: [{&#39;property_id&#39;: 928,
    &#39;type&#39;: &#39;numeric:timestamp&#39;,
@@ -2178,7 +2179,8 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">media_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;media/nla.news-article226799674-24144902.jpg&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The paths can be strings or pathlib Paths</span>
+<span class="n">media_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;media/nla.news-article226799674-24144902.jpg&#39;</span><span class="p">]</span>
 
 <span class="c1"># Include the media files when we upload the payload</span>
 <span class="n">article_item</span> <span class="o">=</span> <span class="n">omeka_auth</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">article_payload</span><span class="p">,</span> <span class="n">media_files</span><span class="o">=</span><span class="n">media_files</span><span class="p">,</span> <span class="n">template_id</span><span class="o">=</span><span class="n">article_template_id</span><span class="p">)</span>
@@ -2221,9 +2223,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;@context&#39;: &#39;http://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/731&#39;,
+ &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/766&#39;,
  &#39;@type&#39;: &#39;o:Item&#39;,
- &#39;o:id&#39;: 731,
+ &#39;o:id&#39;: 766,
  &#39;o:is_public&#39;: True,
  &#39;o:owner&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/users/1&#39;,
   &#39;o:id&#39;: 1},
@@ -2232,15 +2234,15 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
   &#39;o:id&#39;: 4},
  &#39;o:thumbnail&#39;: None,
  &#39;o:title&#39;: &#34;MR WRAGGE&#39;S PREDICTION. RENEWAL OF CYCLONE FORETOLD.&#34;,
- &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: &#39;http://timsherratt.org/collections/files/large/aa9ef3fe881ee92c46bc8f1500d7f9fa9f3d6bb4.jpg&#39;,
-  &#39;medium&#39;: &#39;http://timsherratt.org/collections/files/medium/aa9ef3fe881ee92c46bc8f1500d7f9fa9f3d6bb4.jpg&#39;,
-  &#39;square&#39;: &#39;http://timsherratt.org/collections/files/square/aa9ef3fe881ee92c46bc8f1500d7f9fa9f3d6bb4.jpg&#39;},
- &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-01-26T04:47:02+00:00&#39;,
+ &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: &#39;http://timsherratt.org/collections/files/large/370fd463d1743fc81fa00d71448f294e7aec7643.jpg&#39;,
+  &#39;medium&#39;: &#39;http://timsherratt.org/collections/files/medium/370fd463d1743fc81fa00d71448f294e7aec7643.jpg&#39;,
+  &#39;square&#39;: &#39;http://timsherratt.org/collections/files/square/370fd463d1743fc81fa00d71448f294e7aec7643.jpg&#39;},
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-01-27T05:37:15+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-01-26T04:47:02+00:00&#39;,
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-01-27T05:37:15+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:media&#39;: [{&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/media/732&#39;,
-   &#39;o:id&#39;: 732}],
+ &#39;o:media&#39;: [{&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/media/767&#39;,
+   &#39;o:id&#39;: 767}],
  &#39;o:item_set&#39;: [],
  &#39;o:site&#39;: [],
  &#39;schema:name&#39;: [{&#39;type&#39;: &#39;literal&#39;,
@@ -2258,8 +2260,8 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
    &#39;property_id&#39;: 736,
    &#39;property_label&#39;: &#39;isPartOf&#39;,
    &#39;is_public&#39;: True,
-   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/730&#39;,
-   &#39;value_resource_id&#39;: 730,
+   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/763&#39;,
+   &#39;value_resource_id&#39;: 763,
    &#39;value_resource_name&#39;: &#39;items&#39;,
    &#39;url&#39;: None,
    &#39;display_title&#39;: &#39;The Bendigo Independent (Vic. : 1891 - 1918)&#39;}],
