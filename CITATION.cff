@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: omeka_s_tools
+message: Please cite this software using these metadata.
+type: software
+authors:
+  - given-names: Tim
+    family-names: Sherratt
+    email: tim@timsherratt.org
+    orcid: 'https://orcid.org/0000-0001-7956-4498'
+repository-code: 'https://github.com/wragge/omeka_s_tools'
+abstract: >-
+  Tools for working with data in an instance of Omeka
+  S.
+keywords:
+  - omeka
+license: MIT
+version: 0.0.5
+date-released: '2022-02-07'
