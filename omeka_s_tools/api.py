@@ -20,7 +20,7 @@ class OmekaAPIClient(object):
         }
         # Set up session and caching
         if use_cache:
-            self.s = requests_cache.CachedSession()
+            self.s = requests_cache.CachedSession(expire_after=3600)
             self.s.cache.clear()
         else:
             self.s = requests.Session()
@@ -28,6 +28,8 @@ class OmekaAPIClient(object):
         self.s.mount('http://', HTTPAdapter(max_retries=retries))
         self.s.mount('https://', HTTPAdapter(max_retries=retries))
 
+    def clear_cache():
+        self.s.cache.clear()
 
     def format_resource_id(self, resource_id, resource_type):
         '''
@@ -96,7 +98,8 @@ class OmekaAPIClient(object):
         * a dict containing a JSON-LD formatted representation of the resource
         '''
         response = self.s.get(f'{self.api_url}/{resource_type}/{resource_id}')
-        return response.json()
+        if response.status_code != 404:
+            return response.json()
 
     def get_template_by_label(self, label):
         '''
@@ -245,6 +248,8 @@ class OmekaAPIClient(object):
             properties[data['o:term']] = {'property_id': data['o:id'], 'type': data_type}
         return properties
 
+    # ADDING ITEMS
+
     def prepare_property_value(self, value, property_id):
         '''
         Formats a property value according to its datatype as expected by Omeka.
@@ -307,6 +312,7 @@ class OmekaAPIClient(object):
             response = self.s.post(f'{self.api_url}/items', files=files, params=self.params)
         else:
             response = self.s.post(f'{self.api_url}/items', json=payload, params=self.params)
+        #print(response.text)
         return response.json()
 
     def prepare_item_payload(self, terms):
@@ -408,4 +414,247 @@ class OmekaAPIClient(object):
             payload['o:media'].append({'o:ingester': 'upload', 'file_index': str(index), 'o:item': {}, 'dcterms:title': [{'property_id': 1, '@value': title, 'type': 'literal'}]})
             files[f'file[{index}]'] = path.read_bytes()
         files['data'] = (None, json.dumps(payload), 'application/json')
+        #files['data'] = (json.dumps(payload), 'application/json')
         return files
+
+    # UPDATING RESOURCES
+
+    def delete_resource(self, resource_id, resource_type):
+        '''
+        Deletes a resource. No confirmation is requested, so use carefully.
+
+        Parameters:
+        * `resource_id` - local Omeka identifier of the resource you want to delete
+        * `resource_type` - type of the resource (eg 'items')
+
+        Returns:
+        * dict with JSON-LD representation of the deleted resource
+        '''
+        response = self.s.delete(f'{self.api_url}/{resource_type}/{resource_id}', params=self.params)
+        return response.json()
+
+    def update_resource(self, payload, resource_type='items'):
+        '''
+        Update an existing resource.
+
+        Parameters:
+        * `payload` - the updated resource data
+        * `resource_type` - the type of resource
+
+        To avoid problems, it's generally easiest to retrieve the resource first,
+        make your desired changes to it, then submit the updated resource as your payload.
+        '''
+        response = self.s.put(f'{self.api_url}/{resource_type}/{payload["o:id"]}', json=payload, params=self.params)
+        return response.json()
+
+    def add_media_to_item(self, item_id, media_file):
+        '''
+        Upload a media file and associate it with an existing item.
+
+        Parameters:
+        * `item_id` - the Omeka id of the item this media file should be added to
+        * `media_file` - the media file to be uploaded, c
+
+        The value of `media_file` can be either:
+        * a path to an image/media file (filename is used as title)
+        * a dict containing `title` and `path` values
+
+        The path values can either be strings or pathlib Paths.
+
+        Returns:
+        * a dict providing a JSON-LD representation of the new media object
+        '''
+        files = {}
+        if isinstance(media_file, dict):
+            title = media_file['title']
+            path = Path(media_file['path'])
+        else:
+            path = Path(media_file)
+            title = path.name
+        file_data = {
+            'o:ingester': 'upload',
+            'file_index': '0',
+            'o:item': {'o:id': item_id},
+            'dcterms:title': [{'property_id': 1, '@value': title, 'type': 'literal'}]
+        }
+        files[f'file[0]'] = path.read_bytes()
+        files['data'] = (None, json.dumps(file_data), 'application/json')
+        response = self.s.post(f'{self.api_url}/media', files=files, params=self.params)
+        return response.json()
+
+    # MANAGING TEMPLATES
+
+    def localise_custom_vocabs(self, data_types):
+        '''
+        Check a list of data types for references to custom vocabs.
+        If found, look for the local identifier of the custom vocab,
+        and insert it into the data type information.
+
+        Parameters:
+        * `data_types` - a list of data types from an exported template property
+
+        Returns:
+        * list of datatypes with local identifiers
+        '''
+        dt_names = []
+        for dt in data_types:
+            if dt['name'].startswith('customvocab'):
+                try:
+                    cv_id = self.get_resource('custom_vocabs', label=dt['label'])['o:id']
+                except TypeError:
+                    print(f'Custom vocab {dt["label"]} not found')
+                else:
+                    dt_names.append(f'customvocab:{cv_id}')
+            else:
+                dt_names.append(dt['name'])
+        return dt_names
+
+    def get_template_class_id(self, template):
+        '''
+        Get the local id of the resource class associated with the supplied template.
+
+        Parameters:
+        * `template` - dict from exported template
+
+        Returns:
+        * class identifier
+        '''
+        resource_class = self.get_resource_from_vocab(
+            local_name=template['o:resource_class']['local_name'],
+            vocabulary_namespace_uri=template['o:resource_class']['vocabulary_namespace_uri'],
+            resource_type='resource_classes'
+        )
+        if resource_class:
+            return resource_class['o:id']
+        else:
+            print(f'Resource class "{template["o:resource_class"]["local_name"]}" not found')
+
+    def get_template_property_id(self, template, term):
+        '''
+        Get the local id of the property associated with the supplied template.
+
+        Parameters:
+        * `template` - dict from exported template
+        * `term` - property term (eg 'o:title_property')
+
+        Returns:
+        * property identifier
+        '''
+        prop = self.get_resource_from_vocab(
+            local_name=template[term]['local_name'],
+            vocabulary_namespace_uri=template[term]['vocabulary_namespace_uri'],
+            resource_type='properties'
+        )
+        if prop:
+            return prop['o:id']
+        else:
+            print(f'Property "{template[term]["local_name"]}" not found')
+
+    def prepare_template_payload(self, template_file):
+        '''
+        Insert local property, class, and vocab identifiers into a resource template
+        exported from Omeka so that it can be uploaded to the local instance.
+
+        Parameters:
+        * `template_file` - path to a template exported from Omeka (str or pathlib Path)
+
+        Returns:
+        * template payload with local identifiers inserted
+        '''
+        # Load the template file from the filesystem
+        template = json.loads(Path(template_file).read_bytes())
+        # Get local resource class id
+        resource_class_id = self.get_template_class_id(template)
+        # Get id of property used for title
+        title_id = self.get_template_property_id(template, 'o:title_property')
+        # Get id of property used for description
+        description_id = self.get_template_property_id(template, 'o:description_property')
+        # Create skeleton payload
+        template_payload = {
+            'o:label': template['o:label'],
+            'o:resource_class': self.format_resource_id(resource_class_id, 'resource_classes'),
+            'o:title_property': self.format_resource_id(title_id, 'properties'),
+            'o:description_property': self.format_resource_id(description_id, 'properties'),
+            'o:resource_template_property': []
+        }
+        # The property list in the JSON file exported from Omeka doesn't include property ids, so we need to add them.
+        for prop in template['o:resource_template_property']:
+            # Keep the namespaced values in the property dictionary
+            prop_payload = {k: v for k, v in prop.items() if k.startswith('o:')}
+
+            # Add data types
+            prop_payload['o:data_type'] = self.localise_custom_vocabs(prop['data_types'])
+
+            # Get the property id
+            prop_data = self.get_resource_from_vocab(
+                local_name=prop['local_name'],
+                vocabulary_namespace_uri=prop['vocabulary_namespace_uri'],
+                resource_type='properties'
+            )
+            if prop_data:
+
+                # Add property id to payload
+                prop_payload['o:property'] = self.format_resource_id(prop_data['o:id'], 'properties')
+
+                # Add the property to the template
+                template_payload['o:resource_template_property'].append(prop_payload)
+            else:
+                print(f'Property "{prop["label"]}" not found')
+
+        return template_payload
+
+    def upload_template(self, template_payload):
+        '''
+        Upload a template exported from an instance of Omeka to the current local instance.
+
+        Parameters:
+        * `template_payload` - dict payload generated by `prepare_template_payload`
+
+        Return:
+        * dict containing a JSON-LD representation of the uploaded template
+        '''
+        # Upload the template payload
+        response = self.s.post(f'{self.api_url}/resource_templates/', params=self.params, json=template_payload)
+        return response.json()
+
+    # MODULE RELATED METHODS
+
+    def add_marker_to_item(self, item_id, coords=None, terms=None, label=None, media_id=None):
+        '''
+        Add a map marker to an item.
+        Requires the `mapping` module to be installed.
+
+        Parameters:
+        * `item_id` - identifier of item to add marker to
+        * `coords` - list with coordinates in longitude, latitude order eg [151.209900, -33.865143]
+        * `terms` - list with vocab terms containing longitude and latitude values eg ['schema:longitude', 'schema:latitude']
+        * `label` - label for marker (defaults to item title)
+        * `media_id` - identifier of media resource to display with marker
+
+        Returns:
+        * dict providing JSON-LD representation of marker
+        '''
+        item = self.get_resource_by_id(item_id)
+        if coords:
+            lon, lat = coords
+        elif terms:
+            lon, lat = terms
+            lon = item[lon][0]['@value']
+            lat = item[lat][0]['@value']
+        else:
+            lon = item['schema:longitude'][0]['@value']
+            lat = item['schema:latitude'][0]['@value']
+        lon = float(lon)
+        lat = float(lat)
+        if not label:
+            label = item['o:title']
+        marker_payload = {
+            'o:item': {'o:id': item_id},
+            'o-module-mapping:lat': lat,
+            'o-module-mapping:lng': lon,
+            'o-module-mapping:label': label
+        }
+        if media_id:
+            marker_payload['o:media'] = {'o:id': media_id}
+        response = self.s.post(f'{self.api_url}/mapping_markers/', json=marker_payload, params=self.params)
+        return response.json()

@@ -1,0 +1,492 @@
+{
+    "o:label": "Person",
+    "o:resource_template_property": [
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": true,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "name",
+            "label": "name"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "additionalType",
+            "label": "additionalType"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "description",
+            "label": "description"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "familyName",
+            "label": "familyName"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "givenName",
+            "label": "givenName"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "alternateName",
+            "label": "alternateName"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "numeric:timestamp",
+                    "label": "Timestamp"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "birthDate",
+            "label": "birthDate"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "customvocab:4",
+                    "label": "Date qualifiers"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/purl.archive.org\/omeka-vocabs\/dateprecision#",
+            "vocabulary_label": "Date precision indicators",
+            "local_name": "birthDatePrecision",
+            "label": "birthDatePrecision"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Place|Heritage place|State|Country",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                },
+                {
+                    "name": "valuesuggest:geonames:geonames",
+                    "label": "Geonames: The GeoNames geographical database"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "birthPlace",
+            "label": "birthPlace"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "numeric:timestamp",
+                    "label": "Timestamp"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "deathDate",
+            "label": "deathDate"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "customvocab:4",
+                    "label": "Date qualifiers"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/purl.archive.org\/omeka-vocabs\/dateprecision#",
+            "vocabulary_label": "Date precision indicators",
+            "local_name": "deathDatePrecision",
+            "label": "deathDatePrecision"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Place|Heritage place|State|Country",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                },
+                {
+                    "name": "valuesuggest:geonames:geonames",
+                    "label": "Geonames: The GeoNames geographical database"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "deathPlace",
+            "label": "deathPlace"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Person",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "parent",
+            "label": "parent"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Person",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "spouse",
+            "label": "spouse"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "sibling",
+            "label": "sibling"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Person",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "children",
+            "label": "children"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Person",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "relatedTo",
+            "label": "relatedTo"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Person",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "knows",
+            "label": "knows"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Organisation",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "worksFor",
+            "label": "worksFor"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Organisation",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                },
+                {
+                    "name": "uri",
+                    "label": "URI"
+                },
+                {
+                    "name": "literal",
+                    "label": "Text"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "memberOf",
+            "label": "memberOf"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Event",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "performerIn",
+            "label": "performerIn"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Vehicle",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "owns",
+            "label": "owns"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": "Book|Book chapter|Article|Newspaper article|Archival document|Archival file|Photograph|Art work",
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "resource:item",
+                    "label": "Item"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "subjectOf",
+            "label": "subjectOf"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "image",
+            "label": "image"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "url",
+            "label": "url"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "data_types": [
+                {
+                    "name": "uri",
+                    "label": "URI"
+                }
+            ],
+            "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+            "vocabulary_label": "Schema.org",
+            "local_name": "sameAs",
+            "label": "sameAs"
+        }
+    ],
+    "o:resource_class": {
+        "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+        "vocabulary_label": "Schema.org",
+        "local_name": "Person",
+        "label": "Person"
+    },
+    "o:title_property": {
+        "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+        "vocabulary_label": "Schema.org",
+        "local_name": "name",
+        "label": "name"
+    },
+    "o:description_property": {
+        "vocabulary_namespace_uri": "http:\/\/schema.org\/",
+        "vocabulary_label": "Schema.org",
+        "local_name": "description",
+        "label": "description"
+    }
+}
