@@ -306,7 +306,7 @@ class OmekaAPIClient(object):
         if class_id:
             payload['o:resource_class'] = self.format_resource_id(class_id, 'resource_classes')
         if item_set_id:
-            payload['o:item_set'] = self.format_resource_id(template_id, 'item_sets')
+            payload['o:item_set'] = self.format_resource_id(item_set_id, 'item_sets')
         if media_files:
             files = self.add_media_to_payload(payload, media_files)
             response = self.s.post(f'{self.api_url}/items', files=files, params=self.params)

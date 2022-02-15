@@ -832,250 +832,6 @@ Two search types are available:</p>
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">template_payload</span> <span class="o">=</span> <span class="n">omeka</span><span class="o">.</span><span class="n">prepare_template_payload</span><span class="p">(</span><span class="s1">&#39;templates/Person.json&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">omeka_auth</span><span class="o">.</span><span class="n">upload_template</span><span class="p">(</span><span class="s1">&#39;templates/Person.json&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;@context&#39;: &#39;https://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;https://timsherratt.org/collections/api/resource_templates/9&#39;,
- &#39;@type&#39;: &#39;o:ResourceTemplate&#39;,
- &#39;o:id&#39;: 9,
- &#39;o:label&#39;: &#39;Person&#39;,
- &#39;o:owner&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/users/1&#39;,
-  &#39;o:id&#39;: 1},
- &#39;o:resource_class&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/resource_classes/492&#39;,
-  &#39;o:id&#39;: 492},
- &#39;o:title_property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1116&#39;,
-  &#39;o:id&#39;: 1116},
- &#39;o:description_property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/528&#39;,
-  &#39;o:id&#39;: 528},
- &#39;o:resource_template_property&#39;: [{&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1116&#39;,
-    &#39;o:id&#39;: 1116},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;literal&#39;],
-   &#39;o:is_required&#39;: True,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1199&#39;,
-    &#39;o:id&#39;: 1199},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/528&#39;,
-    &#39;o:id&#39;: 528},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/417&#39;,
-    &#39;o:id&#39;: 417},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1144&#39;,
-    &#39;o:id&#39;: 1144},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/282&#39;,
-    &#39;o:id&#39;: 282},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1357&#39;,
-    &#39;o:id&#39;: 1357},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;numeric:timestamp&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1464&#39;,
-    &#39;o:id&#39;: 1464},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;customvocab:1&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1042&#39;,
-    &#39;o:id&#39;: 1042},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Place|Heritage place|State|Country&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/708&#39;,
-    &#39;o:id&#39;: 708},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;numeric:timestamp&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1468&#39;,
-    &#39;o:id&#39;: 1468},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;customvocab:1&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/766&#39;,
-    &#39;o:id&#39;: 766},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Place|Heritage place|State|Country&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/922&#39;,
-    &#39;o:id&#39;: 922},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Person&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/265&#39;,
-    &#39;o:id&#39;: 265},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Person&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1209&#39;,
-    &#39;o:id&#39;: 1209},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1384&#39;,
-    &#39;o:id&#39;: 1384},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Person&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1358&#39;,
-    &#39;o:id&#39;: 1358},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Person&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/870&#39;,
-    &#39;o:id&#39;: 870},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Person&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/981&#39;,
-    &#39;o:id&#39;: 981},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Organisation&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1253&#39;,
-    &#39;o:id&#39;: 1253},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Organisation&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;, &#39;uri&#39;, &#39;literal&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/804&#39;,
-    &#39;o:id&#39;: 804},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Event&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/588&#39;,
-    &#39;o:id&#39;: 588},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Vehicle&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/1391&#39;,
-    &#39;o:id&#39;: 1391},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: &#39;Book|Book chapter|Article|Newspaper article|Archival document|Archival file|Photograph|Art work&#39;,
-   &#39;o:data_type&#39;: [&#39;resource:item&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/742&#39;,
-    &#39;o:id&#39;: 742},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/393&#39;,
-    &#39;o:id&#39;: 393},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False},
-  {&#39;o:property&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/properties/246&#39;,
-    &#39;o:id&#39;: 246},
-   &#39;o:alternate_label&#39;: None,
-   &#39;o:alternate_comment&#39;: None,
-   &#39;o:data_type&#39;: [&#39;uri&#39;],
-   &#39;o:is_required&#39;: False,
-   &#39;o:is_private&#39;: False}]}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are two stages in creating a new item:</p>
@@ -1527,6 +1283,37 @@ Note:</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">new_item</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;o:Item&#39;</span>
 <span class="k">assert</span> <span class="n">test_item</span><span class="p">[</span><span class="s1">&#39;dcterms:title&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_item</span><span class="p">[</span><span class="s1">&#39;dcterms:title&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;@value&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also add an item to an existing item set by supplying the <code>item_set_id</code> parameter.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_item_set</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">omeka_auth</span><span class="o">.</span><span class="n">get_resources</span><span class="p">(</span><span class="s1">&#39;item_sets&#39;</span><span class="p">)[</span><span class="s1">&#39;results&#39;</span><span class="p">])</span>
+<span class="n">item_set_id</span> <span class="o">=</span> <span class="n">random_item_set</span><span class="p">[</span><span class="s1">&#39;o:id&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create a new item using the item set id</span>
+<span class="n">new_item_in_item_set</span> <span class="o">=</span> <span class="n">new_item</span> <span class="o">=</span> <span class="n">omeka_auth</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">item_set_id</span><span class="o">=</span><span class="n">item_set_id</span><span class="p">)</span>
+
+<span class="c1"># Check that the ids match</span>
+<span class="k">assert</span> <span class="n">new_item_in_item_set</span><span class="p">[</span><span class="s1">&#39;o:item_set&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;o:id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">item_set_id</span>
 </pre></div>
 
     </div>
@@ -2471,8 +2258,8 @@ organised by term. This makes it easy to check if a particular term is used by a
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the example below I'm going to manually step through the process of adding a new item to Omeka using the API in order to demonstrate the methods available. But of course the point of using the API is to automate such processes -- joining together the individual steps so they can be embedded into your own systems or workflows.</p>
-<p>Let's suppose we want to add this newspaper article in Trove to our Omeka instance. To take best advantage of Omeka's linked data infrastructure, we'll actually create two resources -- one for the article, and one for the newspaper it was published in.</p>
+<p>In the example below I'm going to manually step through the process of adding a new item to Omeka using the API in order to demonstrate the methods available. But of course the point of using the API is to automate such processes -- joining together the individual steps so they can be embedded into your own systems or workflows. For a more detailed example that uploads Trove newspaper articles from a variety of sources, including Trove searches, Trove lists, and Zotero libraries, see the <a href="https://glam-workbench.net/trove-newspapers/#upload-trove-newspaper-articles-to-omeka-s">GLAM Workbench</a>.</p>
+<p>Let's suppose we want to add <a href="http://nla.gov.au/nla.news-article226799674">this newspaper article</a> in Trove to our Omeka instance. To take best advantage of Omeka's linked data infrastructure, we'll actually create two resources -- one for the article, and one for the newspaper it was published in.</p>
 <p>I've already created templates labelled 'Newspaper' and 'Newspaper article'.</p>
 <p>Let's start with the newspaper. First we need to find out the numeric identifier Omeka is using for the Newspaper template. We can use <a href="/omeka_s_tools/api.html#OmekaAPIClient.get_template_by_label"><code>OmekaAPIClient.get_template_by_label</code></a> to find out.</p>
 
