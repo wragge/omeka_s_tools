@@ -142,3 +142,4 @@ checklink/cookies.txt
 .gitconfig
 
 *.sqlite
+omeka_s_tools.code-workspace
