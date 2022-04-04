@@ -31,6 +31,22 @@ class OmekaAPIClient(object):
     def clear_cache():
         self.s.cache.clear()
 
+    def process_response(self, response):
+        '''
+        Handle Omeka responses, raising exceptions on errors.
+        '''
+        # Raise exception on HTTP error
+        response.raise_for_status()
+        # Try extracting JSON data
+        try:
+            data = response.json()
+        # If there's no JSON, display the raw response text and raise exception
+        except (json.decoder.JSONDecodeError, ValueError):
+            print(f'Bad JSON: {response.text}')
+            raise
+        else:
+            return data
+
     def format_resource_id(self, resource_id, resource_type):
         '''
         Generate a formatted id for the resource with the specified Omeka id number and resource type.
@@ -63,8 +79,8 @@ class OmekaAPIClient(object):
         * `results` - a list of dicts, each containing a JSON-LD formatted representation of a resource
         '''
         response = self.s.get(f'{self.api_url}/{resource_type}/', params=kwargs)
-        results = response.json()
-        return {'total_results': int(response.headers['Omeka-S-Total-Results']), 'results': results}
+        data = self.process_response(response)
+        return {'total_results': int(response.headers['Omeka-S-Total-Results']), 'results': data}
 
     def get_resource(self, resource_type, **kwargs):
         '''
@@ -98,8 +114,8 @@ class OmekaAPIClient(object):
         * a dict containing a JSON-LD formatted representation of the resource
         '''
         response = self.s.get(f'{self.api_url}/{resource_type}/{resource_id}')
-        if response.status_code != 404:
-            return response.json()
+        data = self.process_response(response)
+        return data
 
     def get_template_by_label(self, label):
         '''
@@ -192,8 +208,8 @@ class OmekaAPIClient(object):
         }
         params = self.filter_items(params, **extra_filters)
         # print(params)
-        data = self.get_resources('items', **params)
-        return data
+        results = self.get_resources('items', **params)
+        return results
 
     def search_items(self, query, search_type='fulltext_search', page=1, **extra_filters):
         '''
@@ -220,7 +236,8 @@ class OmekaAPIClient(object):
         params = {'page': page}
         params[search_type] = query
         params = self.filter_items(params, **extra_filters)
-        return self.get_resources('items', **params)
+        results = self.get_resources('items', **params)
+        return results
 
     def get_template_properties(self, template_id):
         '''
@@ -242,7 +259,7 @@ class OmekaAPIClient(object):
             prop_url = prop['o:property']['@id']
             # The resource template doesn't include property terms, so we have to go to the property data
             response = self.s.get(prop_url)
-            data = response.json()
+            data = self.process_response(response)
             # Use default data types if they're not defined in the resource template
             data_type = ['literal', 'uri', 'resource:item'] if prop['o:data_type'] == [] else prop['o:data_type']
             properties[data['o:term']] = {'property_id': data['o:id'], 'type': data_type}
@@ -317,7 +334,8 @@ class OmekaAPIClient(object):
         else:
             response = self.s.post(f'{self.api_url}/items', json=payload, params=self.params)
         #print(response.text)
-        return response.json()
+        data = self.process_response(response)
+        return data
 
     def prepare_item_payload(self, terms):
         '''
@@ -435,7 +453,8 @@ class OmekaAPIClient(object):
         * dict with JSON-LD representation of the deleted resource
         '''
         response = self.s.delete(f'{self.api_url}/{resource_type}/{resource_id}', params=self.params)
-        return response.json()
+        data = self.process_response(response)
+        return data
 
     def update_resource(self, payload, resource_type='items'):
         '''
@@ -449,7 +468,8 @@ class OmekaAPIClient(object):
         make your desired changes to it, then submit the updated resource as your payload.
         '''
         response = self.s.put(f'{self.api_url}/{resource_type}/{payload["o:id"]}', json=payload, params=self.params)
-        return response.json()
+        data = self.process_response(response)
+        return data
 
     def add_media_to_item(self, item_id, media_file, payload={}, template_id=None, class_id=None):
         '''
@@ -493,7 +513,8 @@ class OmekaAPIClient(object):
         files[f'file[0]'] = path.read_bytes()
         files['data'] = (None, json.dumps(payload), 'application/json')
         response = self.s.post(f'{self.api_url}/media', files=files, params=self.params)
-        return response.json()
+        data = self.process_response(response)
+        return data
 
     # MANAGING TEMPLATES
 
@@ -628,7 +649,8 @@ class OmekaAPIClient(object):
         '''
         # Upload the template payload
         response = self.s.post(f'{self.api_url}/resource_templates/', params=self.params, json=template_payload)
-        return response.json()
+        data = self.process_response(response)
+        return data
 
     # MODULE RELATED METHODS
 
@@ -670,4 +692,5 @@ class OmekaAPIClient(object):
         if media_id:
             marker_payload['o:media'] = {'o:id': media_id}
         response = self.s.post(f'{self.api_url}/mapping_markers/', json=marker_payload, params=self.params)
-        return response.json()
+        data = self.process_response(response)
+        return data

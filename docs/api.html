@@ -119,7 +119,7 @@ nb_path: "api.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_resources" class="doc_header"><code>OmekaAPIClient.get_resources</code><a href="__main__.py#L47" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resources</code>(<strong><code>resource_type</code></strong>, <strong>**<code>kwargs</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_resources" class="doc_header"><code>OmekaAPIClient.get_resources</code><a href="__main__.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resources</code>(<strong><code>resource_type</code></strong>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
 <p>Get a list of resources matching the supplied parameters.
 This will return the first page of matching results. To retrieve additional pages, 
@@ -168,7 +168,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>101</pre>
+<pre>120</pre>
 </div>
 
 </div>
@@ -226,7 +226,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_resource_by_id" class="doc_header"><code>OmekaAPIClient.get_resource_by_id</code><a href="__main__.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_by_id</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'items'</code></em>)</p>
+<h4 id="OmekaAPIClient.get_resource_by_id" class="doc_header"><code>OmekaAPIClient.get_resource_by_id</code><a href="__main__.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_by_id</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'items'</code></em>)</p>
 </blockquote>
 <p>Get a resource from its Omeka id.</p>
 <p>Parameters:</p>
@@ -292,7 +292,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_template_by_label" class="doc_header"><code>OmekaAPIClient.get_template_by_label</code><a href="__main__.py#L100" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_by_label</code>(<strong><code>label</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_template_by_label" class="doc_header"><code>OmekaAPIClient.get_template_by_label</code><a href="__main__.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_by_label</code>(<strong><code>label</code></strong>)</p>
 </blockquote>
 <p>Get a resource template from its Omeka label.</p>
 <p>Parameters:</p>
@@ -369,7 +369,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_resource_by_term" class="doc_header"><code>OmekaAPIClient.get_resource_by_term</code><a href="__main__.py#L112" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_by_term</code>(<strong><code>term</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'properties'</code></em>)</p>
+<h4 id="OmekaAPIClient.get_resource_by_term" class="doc_header"><code>OmekaAPIClient.get_resource_by_term</code><a href="__main__.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_by_term</code>(<strong><code>term</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'properties'</code></em>)</p>
 </blockquote>
 <p>Get the resource (property or class) associated with the suppied term.</p>
 <p>Parameters:</p>
@@ -463,7 +463,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_resource_from_vocab" class="doc_header"><code>OmekaAPIClient.get_resource_from_vocab</code><a href="__main__.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_from_vocab</code>(<strong><code>local_name</code></strong>, <strong><code>vocabulary_namespace_uri</code></strong>=<em><code>'http://schema.org/'</code></em>, <strong><code>resource_type</code></strong>=<em><code>'properties'</code></em>)</p>
+<h4 id="OmekaAPIClient.get_resource_from_vocab" class="doc_header"><code>OmekaAPIClient.get_resource_from_vocab</code><a href="__main__.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_resource_from_vocab</code>(<strong><code>local_name</code></strong>, <strong><code>vocabulary_namespace_uri</code></strong>=<em><code>'http://schema.org/'</code></em>, <strong><code>resource_type</code></strong>=<em><code>'properties'</code></em>)</p>
 </blockquote>
 <p>Get the resource (property or class) associated with the suppied vocabulary and label.</p>
 <p>Parameters:</p>
@@ -564,7 +564,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_property_id" class="doc_header"><code>OmekaAPIClient.get_property_id</code><a href="__main__.py#L137" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_property_id</code>(<strong><code>term</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_property_id" class="doc_header"><code>OmekaAPIClient.get_property_id</code><a href="__main__.py#L153" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_property_id</code>(<strong><code>term</code></strong>)</p>
 </blockquote>
 <p>Get the numeric identifier associated with the supplied property term.</p>
 <p>Parameters:</p>
@@ -651,7 +651,7 @@ you can supply the <code>page</code> parameter to move through the full result s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.filter_items_by_property" class="doc_header"><code>OmekaAPIClient.filter_items_by_property</code><a href="__main__.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.filter_items_by_property</code>(<strong><code>filter_property</code></strong>=<em><code>'schema:name'</code></em>, <strong><code>filter_value</code></strong>=<em><code>''</code></em>, <strong><code>filter_type</code></strong>=<em><code>'eq'</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong>**<code>extra_filters</code></strong>)</p>
+<h4 id="OmekaAPIClient.filter_items_by_property" class="doc_header"><code>OmekaAPIClient.filter_items_by_property</code><a href="__main__.py#L174" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.filter_items_by_property</code>(<strong><code>filter_property</code></strong>=<em><code>'schema:name'</code></em>, <strong><code>filter_value</code></strong>=<em><code>''</code></em>, <strong><code>filter_type</code></strong>=<em><code>'eq'</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong>**<code>extra_filters</code></strong>)</p>
 </blockquote>
 <p>Filter the list of items by searching for a value in a particular property.
 Additional filters can also limit to items associated with particular templates, classes, or item sets.</p>
@@ -727,7 +727,7 @@ Additional filters can also limit to items associated with particular templates,
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Clement Wragge at Home. - UPDATED!&#39;</pre>
+<pre>&#39;Clement Wragge at Home. - UPDATED! - UPDATED!&#39;</pre>
 </div>
 
 </div>
@@ -749,7 +749,7 @@ Additional filters can also limit to items associated with particular templates,
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.search_items" class="doc_header"><code>OmekaAPIClient.search_items</code><a href="__main__.py#L194" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.search_items</code>(<strong><code>query</code></strong>, <strong><code>search_type</code></strong>=<em><code>'fulltext_search'</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong>**<code>extra_filters</code></strong>)</p>
+<h4 id="OmekaAPIClient.search_items" class="doc_header"><code>OmekaAPIClient.search_items</code><a href="__main__.py#L210" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.search_items</code>(<strong><code>query</code></strong>, <strong><code>search_type</code></strong>=<em><code>'fulltext_search'</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong>**<code>extra_filters</code></strong>)</p>
 </blockquote>
 <p>Search for matching items.
 Two search types are available:</p>
@@ -809,7 +809,7 @@ Two search types are available:</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>21</pre>
+<pre>23</pre>
 </div>
 
 </div>
@@ -887,7 +887,7 @@ Two search types are available:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.prepare_item_payload" class="doc_header"><code>OmekaAPIClient.prepare_item_payload</code><a href="__main__.py#L318" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_item_payload</code>(<strong><code>terms</code></strong>)</p>
+<h4 id="OmekaAPIClient.prepare_item_payload" class="doc_header"><code>OmekaAPIClient.prepare_item_payload</code><a href="__main__.py#L336" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_item_payload</code>(<strong><code>terms</code></strong>)</p>
 </blockquote>
 <p>Prepare an item payload, ready for upload.</p>
 <p>Parameters:</p>
@@ -1014,7 +1014,7 @@ Two search types are available:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.prepare_item_payload_using_template" class="doc_header"><code>OmekaAPIClient.prepare_item_payload_using_template</code><a href="__main__.py#L342" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_item_payload_using_template</code>(<strong><code>terms</code></strong>, <strong><code>template_id</code></strong>)</p>
+<h4 id="OmekaAPIClient.prepare_item_payload_using_template" class="doc_header"><code>OmekaAPIClient.prepare_item_payload_using_template</code><a href="__main__.py#L360" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_item_payload_using_template</code>(<strong><code>terms</code></strong>, <strong><code>template_id</code></strong>)</p>
 </blockquote>
 <p>Prepare an item payload, checking the supplied terms and values against the specified template.
 Note:</p>
@@ -1138,7 +1138,7 @@ Note:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.add_media_to_payload" class="doc_header"><code>OmekaAPIClient.add_media_to_payload</code><a href="__main__.py#L388" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_media_to_payload</code>(<strong><code>payload</code></strong>, <strong><code>media_files</code></strong>)</p>
+<h4 id="OmekaAPIClient.add_media_to_payload" class="doc_header"><code>OmekaAPIClient.add_media_to_payload</code><a href="__main__.py#L406" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_media_to_payload</code>(<strong><code>payload</code></strong>, <strong><code>media_files</code></strong>)</p>
 </blockquote>
 <p>Add media files to the item payload.</p>
 <p>Parameters:</p>
@@ -1218,7 +1218,7 @@ Note:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.add_item" class="doc_header"><code>OmekaAPIClient.add_item</code><a href="__main__.py#L286" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_item</code>(<strong><code>payload</code></strong>, <strong><code>media_files</code></strong>=<em><code>None</code></em>, <strong><code>template_id</code></strong>=<em><code>None</code></em>, <strong><code>class_id</code></strong>=<em><code>None</code></em>, <strong><code>item_set_id</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="OmekaAPIClient.add_item" class="doc_header"><code>OmekaAPIClient.add_item</code><a href="__main__.py#L303" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_item</code>(<strong><code>payload</code></strong>, <strong><code>media_files</code></strong>=<em><code>None</code></em>, <strong><code>template_id</code></strong>=<em><code>None</code></em>, <strong><code>class_id</code></strong>=<em><code>None</code></em>, <strong><code>item_set_id</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Create a new item from the supplied payload, optionally uploading attached media files.</p>
 <p>Parameters:</p>
@@ -1274,9 +1274,9 @@ Note:</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;@context&#39;: &#39;https://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;https://timsherratt.org/collections/api/items/992&#39;,
+ &#39;@id&#39;: &#39;https://timsherratt.org/collections/api/items/1038&#39;,
  &#39;@type&#39;: &#39;o:Item&#39;,
- &#39;o:id&#39;: 992,
+ &#39;o:id&#39;: 1038,
  &#39;o:is_public&#39;: True,
  &#39;o:owner&#39;: {&#39;@id&#39;: &#39;https://timsherratt.org/collections/api/users/1&#39;,
   &#39;o:id&#39;: 1},
@@ -1285,9 +1285,9 @@ Note:</p>
  &#39;o:thumbnail&#39;: None,
  &#39;o:title&#39;: &#39;My first resource!&#39;,
  &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: None, &#39;medium&#39;: None, &#39;square&#39;: None},
- &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:43:24+00:00&#39;,
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:47:02+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:43:24+00:00&#39;,
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:47:02+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
  &#39;o:media&#39;: [],
  &#39;o:item_set&#39;: [],
@@ -1373,7 +1373,7 @@ Note:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.delete_resource" class="doc_header"><code>OmekaAPIClient.delete_resource</code><a href="__main__.py#L422" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.delete_resource</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>)</p>
+<h4 id="OmekaAPIClient.delete_resource" class="doc_header"><code>OmekaAPIClient.delete_resource</code><a href="__main__.py#L440" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.delete_resource</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>)</p>
 </blockquote>
 <p>Deletes a resource. No confirmation is requested, so use carefully.</p>
 <p>Parameters:</p>
@@ -1414,8 +1414,9 @@ Note:</p>
 <span class="c1"># The titles of the random and deleted items should be the same</span>
 <span class="k">assert</span> <span class="n">deleted_resource</span><span class="p">[</span><span class="s1">&#39;o:title&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">random_item</span><span class="p">[</span><span class="s1">&#39;o:title&#39;</span><span class="p">]</span>
 
-<span class="c1"># Trying to get the random item should now return None</span>
-<span class="k">assert</span> <span class="n">omeka_auth</span><span class="o">.</span><span class="n">get_resource_by_id</span><span class="p">(</span><span class="n">random_item</span><span class="p">[</span><span class="s1">&#39;o:id&#39;</span><span class="p">],</span> <span class="s1">&#39;items&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="c1"># Trying to get the random item should now raise an HTTP 404 error</span>
+<span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="n">omeka_auth</span><span class="o">.</span><span class="n">get_resource_by_id</span><span class="p">(</span><span class="n">random_item</span><span class="p">[</span><span class="s1">&#39;o:id&#39;</span><span class="p">],</span> <span class="s1">&#39;items&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1436,7 +1437,7 @@ Note:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.update_resource" class="doc_header"><code>OmekaAPIClient.update_resource</code><a href="__main__.py#L436" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.update_resource</code>(<strong><code>payload</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'items'</code></em>)</p>
+<h4 id="OmekaAPIClient.update_resource" class="doc_header"><code>OmekaAPIClient.update_resource</code><a href="__main__.py#L455" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.update_resource</code>(<strong><code>payload</code></strong>, <strong><code>resource_type</code></strong>=<em><code>'items'</code></em>)</p>
 </blockquote>
 <p>Update an existing resource.</p>
 <p>Parameters:</p>
@@ -1497,7 +1498,7 @@ make your desired changes to it, then submit the updated resource as your payloa
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The Courier-Mail (Brisbane, Qld. : 1933 - 1954) - UPDATED!
+<pre>Wellington Times (NSW : 1899 - 1954) - UPDATED! - UPDATED! - UPDATED!
 </pre>
 </div>
 </div>
@@ -1519,7 +1520,7 @@ make your desired changes to it, then submit the updated resource as your payloa
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.add_media_to_item" class="doc_header"><code>OmekaAPIClient.add_media_to_item</code><a href="__main__.py#L450" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_media_to_item</code>(<strong><code>item_id</code></strong>, <strong><code>media_file</code></strong>, <strong><code>payload</code></strong>=<em><code>{}</code></em>, <strong><code>template_id</code></strong>=<em><code>None</code></em>, <strong><code>class_id</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="OmekaAPIClient.add_media_to_item" class="doc_header"><code>OmekaAPIClient.add_media_to_item</code><a href="__main__.py#L470" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_media_to_item</code>(<strong><code>item_id</code></strong>, <strong><code>media_file</code></strong>, <strong><code>payload</code></strong>=<em><code>{}</code></em>, <strong><code>template_id</code></strong>=<em><code>None</code></em>, <strong><code>class_id</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Upload a media file and associate it with an existing item.</p>
 <p>Parameters:</p>
@@ -1708,7 +1709,7 @@ make your desired changes to it, then submit the updated resource as your payloa
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.add_marker_to_item" class="doc_header"><code>OmekaAPIClient.add_marker_to_item</code><a href="__main__.py#L631" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_marker_to_item</code>(<strong><code>item_id</code></strong>, <strong><code>coords</code></strong>=<em><code>None</code></em>, <strong><code>terms</code></strong>=<em><code>None</code></em>, <strong><code>label</code></strong>=<em><code>None</code></em>, <strong><code>media_id</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="OmekaAPIClient.add_marker_to_item" class="doc_header"><code>OmekaAPIClient.add_marker_to_item</code><a href="__main__.py#L653" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.add_marker_to_item</code>(<strong><code>item_id</code></strong>, <strong><code>coords</code></strong>=<em><code>None</code></em>, <strong><code>terms</code></strong>=<em><code>None</code></em>, <strong><code>label</code></strong>=<em><code>None</code></em>, <strong><code>media_id</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Add a map marker to an item.
 Requires the <code>mapping</code> module to be installed.</p>
@@ -1866,7 +1867,7 @@ Requires the <code>mapping</code> module to be installed.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.prepare_template_payload" class="doc_header"><code>OmekaAPIClient.prepare_template_payload</code><a href="__main__.py#L562" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_template_payload</code>(<strong><code>template_file</code></strong>)</p>
+<h4 id="OmekaAPIClient.prepare_template_payload" class="doc_header"><code>OmekaAPIClient.prepare_template_payload</code><a href="__main__.py#L583" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_template_payload</code>(<strong><code>template_file</code></strong>)</p>
 </blockquote>
 <p>Insert local property, class, and vocab identifiers into a resource template
 exported from Omeka so that it can be uploaded to the local instance.</p>
@@ -1944,7 +1945,7 @@ exported from Omeka so that it can be uploaded to the local instance.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.upload_template" class="doc_header"><code>OmekaAPIClient.upload_template</code><a href="__main__.py#L615" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.upload_template</code>(<strong><code>template_payload</code></strong>)</p>
+<h4 id="OmekaAPIClient.upload_template" class="doc_header"><code>OmekaAPIClient.upload_template</code><a href="__main__.py#L636" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.upload_template</code>(<strong><code>template_payload</code></strong>)</p>
 </blockquote>
 <p>Upload a template exported from an instance of Omeka to the current local instance.</p>
 <p>Parameters:</p>
@@ -2012,7 +2013,7 @@ exported from Omeka so that it can be uploaded to the local instance.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.localise_custom_vocabs" class="doc_header"><code>OmekaAPIClient.localise_custom_vocabs</code><a href="__main__.py#L496" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.localise_custom_vocabs</code>(<strong><code>data_types</code></strong>)</p>
+<h4 id="OmekaAPIClient.localise_custom_vocabs" class="doc_header"><code>OmekaAPIClient.localise_custom_vocabs</code><a href="__main__.py#L517" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.localise_custom_vocabs</code>(<strong><code>data_types</code></strong>)</p>
 </blockquote>
 <p>Check a list of data types for references to custom vocabs.
 If found, look for the local identifier of the custom vocab, 
@@ -2088,7 +2089,7 @@ and insert it into the data type information.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_template_class_id" class="doc_header"><code>OmekaAPIClient.get_template_class_id</code><a href="__main__.py#L521" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_class_id</code>(<strong><code>template</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_template_class_id" class="doc_header"><code>OmekaAPIClient.get_template_class_id</code><a href="__main__.py#L542" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_class_id</code>(<strong><code>template</code></strong>)</p>
 </blockquote>
 <p>Get the local id of the resource class associated with the supplied template.</p>
 <p>Parameters:</p>
@@ -2145,7 +2146,7 @@ and insert it into the data type information.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_template_property_id" class="doc_header"><code>OmekaAPIClient.get_template_property_id</code><a href="__main__.py#L541" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_property_id</code>(<strong><code>template</code></strong>, <strong><code>term</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_template_property_id" class="doc_header"><code>OmekaAPIClient.get_template_property_id</code><a href="__main__.py#L562" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_property_id</code>(<strong><code>template</code></strong>, <strong><code>term</code></strong>)</p>
 </blockquote>
 <p>Get the local id of the property associated with the supplied template.</p>
 <p>Parameters:</p>
@@ -2211,7 +2212,7 @@ and insert it into the data type information.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.format_resource_id" class="doc_header"><code>OmekaAPIClient.format_resource_id</code><a href="__main__.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.format_resource_id</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>)</p>
+<h4 id="OmekaAPIClient.format_resource_id" class="doc_header"><code>OmekaAPIClient.format_resource_id</code><a href="__main__.py#L46" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.format_resource_id</code>(<strong><code>resource_id</code></strong>, <strong><code>resource_type</code></strong>)</p>
 </blockquote>
 <p>Generate a formatted id for the resource with the specified Omeka id number and resource type.</p>
 <p>Parameters:</p>
@@ -2267,7 +2268,7 @@ and insert it into the data type information.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.prepare_property_value" class="doc_header"><code>OmekaAPIClient.prepare_property_value</code><a href="__main__.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_property_value</code>(<strong><code>value</code></strong>, <strong><code>property_id</code></strong>)</p>
+<h4 id="OmekaAPIClient.prepare_property_value" class="doc_header"><code>OmekaAPIClient.prepare_property_value</code><a href="__main__.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.prepare_property_value</code>(<strong><code>value</code></strong>, <strong><code>property_id</code></strong>)</p>
 </blockquote>
 <p>Formats a property value according to its datatype as expected by Omeka. 
 The formatted value can be used in a payload to create a new item.</p>
@@ -2359,7 +2360,7 @@ The formatted value can be used in a payload to create a new item.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="OmekaAPIClient.get_template_properties" class="doc_header"><code>OmekaAPIClient.get_template_properties</code><a href="__main__.py#L221" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_properties</code>(<strong><code>template_id</code></strong>)</p>
+<h4 id="OmekaAPIClient.get_template_properties" class="doc_header"><code>OmekaAPIClient.get_template_properties</code><a href="__main__.py#L238" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>OmekaAPIClient.get_template_properties</code>(<strong><code>template_id</code></strong>)</p>
 </blockquote>
 <p>List properties used by the specified template.</p>
 <p>The resource template objects returned by the API don't include property terms.
@@ -2753,9 +2754,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;@context&#39;: &#39;http://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/999&#39;,
+ &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/1045&#39;,
  &#39;@type&#39;: [&#39;o:Item&#39;, &#39;schema:Newspaper&#39;],
- &#39;o:id&#39;: 999,
+ &#39;o:id&#39;: 1045,
  &#39;o:is_public&#39;: True,
  &#39;o:owner&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/users/1&#39;,
   &#39;o:id&#39;: 1},
@@ -2766,9 +2767,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
  &#39;o:thumbnail&#39;: None,
  &#39;o:title&#39;: &#39;The Bendigo Independent (Vic. : 1891 - 1918)&#39;,
  &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: None, &#39;medium&#39;: None, &#39;square&#39;: None},
- &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:44:57+00:00&#39;,
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:48:33+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:44:57+00:00&#39;,
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:48:33+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
  &#39;o:media&#39;: [],
  &#39;o:item_set&#39;: [],
@@ -3034,8 +3035,8 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
    &#39;@value&#39;: &#34;MR WRAGGE&#39;S PREDICTION. RENEWAL OF CYCLONE FORETOLD.&#34;}],
  &#39;schema:isPartOf&#39;: [{&#39;property_id&#39;: 736,
    &#39;type&#39;: &#39;resource:item&#39;,
-   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/999&#39;,
-   &#39;value_resource_id&#39;: 999,
+   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/1045&#39;,
+   &#39;value_resource_id&#39;: 1045,
    &#39;value_resource_name&#39;: &#39;items&#39;}],
  &#39;schema:datePublished&#39;: [{&#39;property_id&#39;: 928,
    &#39;type&#39;: &#39;numeric:timestamp&#39;,
@@ -3111,9 +3112,9 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;@context&#39;: &#39;http://timsherratt.org/collections/api-context&#39;,
- &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/1000&#39;,
+ &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/1046&#39;,
  &#39;@type&#39;: [&#39;o:Item&#39;, &#39;schema:NewsArticle&#39;],
- &#39;o:id&#39;: 1000,
+ &#39;o:id&#39;: 1046,
  &#39;o:is_public&#39;: True,
  &#39;o:owner&#39;: {&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/users/1&#39;,
   &#39;o:id&#39;: 1},
@@ -3123,15 +3124,15 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
   &#39;o:id&#39;: 4},
  &#39;o:thumbnail&#39;: None,
  &#39;o:title&#39;: &#34;MR WRAGGE&#39;S PREDICTION. RENEWAL OF CYCLONE FORETOLD.&#34;,
- &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: &#39;http://timsherratt.org/collections/files/large/4ad01b874e1d7f94c659638f681b93287b231263.jpg&#39;,
-  &#39;medium&#39;: &#39;http://timsherratt.org/collections/files/medium/4ad01b874e1d7f94c659638f681b93287b231263.jpg&#39;,
-  &#39;square&#39;: &#39;http://timsherratt.org/collections/files/square/4ad01b874e1d7f94c659638f681b93287b231263.jpg&#39;},
- &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:45:04+00:00&#39;,
+ &#39;thumbnail_display_urls&#39;: {&#39;large&#39;: &#39;http://timsherratt.org/collections/files/large/c60918ee88cb729ae8803742bbbb185460700903.jpg&#39;,
+  &#39;medium&#39;: &#39;http://timsherratt.org/collections/files/medium/c60918ee88cb729ae8803742bbbb185460700903.jpg&#39;,
+  &#39;square&#39;: &#39;http://timsherratt.org/collections/files/square/c60918ee88cb729ae8803742bbbb185460700903.jpg&#39;},
+ &#39;o:created&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:48:40+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-03T06:45:04+00:00&#39;,
+ &#39;o:modified&#39;: {&#39;@value&#39;: &#39;2022-04-04T00:48:40+00:00&#39;,
   &#39;@type&#39;: &#39;http://www.w3.org/2001/XMLSchema#dateTime&#39;},
- &#39;o:media&#39;: [{&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/media/1001&#39;,
-   &#39;o:id&#39;: 1001}],
+ &#39;o:media&#39;: [{&#39;@id&#39;: &#39;http://timsherratt.org/collections/api/media/1047&#39;,
+   &#39;o:id&#39;: 1047}],
  &#39;o:item_set&#39;: [],
  &#39;o:site&#39;: [],
  &#39;schema:name&#39;: [{&#39;type&#39;: &#39;literal&#39;,
@@ -3149,8 +3150,8 @@ Data type &#34;literal&#34; for term &#34;schema:url&#34; not allowed by templat
    &#39;property_id&#39;: 736,
    &#39;property_label&#39;: &#39;isPartOf&#39;,
    &#39;is_public&#39;: True,
-   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/999&#39;,
-   &#39;value_resource_id&#39;: 999,
+   &#39;@id&#39;: &#39;http://timsherratt.org/collections/api/items/1045&#39;,
+   &#39;value_resource_id&#39;: 1045,
    &#39;value_resource_name&#39;: &#39;items&#39;,
    &#39;url&#39;: None,
    &#39;display_title&#39;: &#39;The Bendigo Independent (Vic. : 1891 - 1918)&#39;}],
