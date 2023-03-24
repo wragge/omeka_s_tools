@@ -300,6 +300,8 @@ class OmekaAPIClient(object):
             property_value['value_resource_name'] = 'items'
         elif data_type == 'uri':
             property_value['@id'] = value['value']
+            if value['label']:
+                property_value['o:label'] = value['label']
         else:
             property_value['@value'] = value['value']
         return property_value
