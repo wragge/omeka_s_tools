@@ -168,6 +168,20 @@ class OmekaAPIClient(object):
         if resource:
             return resource['o:id']
 
+    def get_class_id(self, term):
+        '''
+        Get the numeric identifier associated with the supplied class term.
+
+        Parameters:
+        * `term` - class label qualified with vocabulary prefix (eg: 'crm:E65_Creation')
+
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_resource_by_term(term=term, resource_type='resource_classes')
+        if resource:
+            return resource['o:id']
+
     def filter_items(self, params, **extra_filters):
         for filter_type in ['resource_template_id', 'resource_class_id', 'item_set_id', 'is_public']:
             filter_value = extra_filters.get(filter_type)
