@@ -196,6 +196,20 @@ class OmekaAPIClient(object):
         if resource:
             return resource['o:id']
 
+    def get_itemset_id(self, label):
+        '''
+        Get the numeric identifier associated with the supplied item-set label.
+        
+        Parameters:
+        * `label` - item-set label as recorded in omeka (eg: 'my collection')
+        
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_resource('item_sets', search=itemSetName)
+        if resource:
+            return resource['o:id']
+
     def filter_items(self, params, **extra_filters):
         for filter_type in ['resource_template_id', 'resource_class_id', 'item_set_id', 'is_public']:
             filter_value = extra_filters.get(filter_type)
