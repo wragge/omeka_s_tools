@@ -167,6 +167,20 @@ class OmekaAPIClient(object):
         resource = self.get_resource_by_term(term=term)
         if resource:
             return resource['o:id']
+            
+    def get_template_id(self, label):
+        '''
+        Get the numeric identifier associated with the supplied template label.
+
+        Parameters:
+        * `label` - template label used in the omeka instance (eg: 'creation')
+
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_template_by_label(label)
+        if resource:
+            return resource['o:id']
 
     def filter_items(self, params, **extra_filters):
         for filter_type in ['resource_template_id', 'resource_class_id', 'item_set_id', 'is_public']:
