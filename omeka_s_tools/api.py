@@ -206,7 +206,7 @@ class OmekaAPIClient(object):
         Returns:
         * numeric identifier
         '''
-        resource = self.get_resource('item_sets', search=itemSetName)
+        resource = self.get_resource('item_sets', search=label)
         if resource:
             return resource['o:id']
 
