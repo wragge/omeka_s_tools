@@ -167,6 +167,48 @@ class OmekaAPIClient(object):
         resource = self.get_resource_by_term(term=term)
         if resource:
             return resource['o:id']
+            
+    def get_template_id(self, label):
+        '''
+        Get the numeric identifier associated with the supplied template label.
+
+        Parameters:
+        * `label` - template label used in the omeka instance (eg: 'creation')
+
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_template_by_label(label)
+        if resource:
+            return resource['o:id']
+
+    def get_class_id(self, term):
+        '''
+        Get the numeric identifier associated with the supplied class term.
+
+        Parameters:
+        * `term` - class label qualified with vocabulary prefix (eg: 'crm:E65_Creation')
+
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_resource_by_term(term=term, resource_type='resource_classes')
+        if resource:
+            return resource['o:id']
+
+    def get_itemset_id(self, label):
+        '''
+        Get the numeric identifier associated with the supplied item-set label.
+        
+        Parameters:
+        * `label` - item-set label as recorded in omeka (eg: 'my collection')
+        
+        Returns:
+        * numeric identifier
+        '''
+        resource = self.get_resource('item_sets', search=label)
+        if resource:
+            return resource['o:id']
 
     def filter_items(self, params, **extra_filters):
         for filter_type in ['resource_template_id', 'resource_class_id', 'item_set_id', 'is_public']:
@@ -298,8 +340,12 @@ class OmekaAPIClient(object):
             property_value['@id'] = f'{self.api_url}/items/{value["value"]}'
             property_value['value_resource_id'] = value['value']
             property_value['value_resource_name'] = 'items'
+        elif data_type == 'numeric:timestamp':
+            property_value['@value'] = value['value']
         elif data_type == 'uri':
             property_value['@id'] = value['value']
+            if value['label']:
+                property_value['o:label'] = value['label']
         else:
             property_value['@value'] = value['value']
         return property_value
