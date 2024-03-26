@@ -340,6 +340,8 @@ class OmekaAPIClient(object):
             property_value['@id'] = f'{self.api_url}/items/{value["value"]}'
             property_value['value_resource_id'] = value['value']
             property_value['value_resource_name'] = 'items'
+        elif data_type == 'numeric:timestamp':
+            property_value['@value'] = value['value']
         elif data_type == 'uri':
             property_value['@id'] = value['value']
             if value['label']:
